@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Space Station Pin up - Uzayda Bir Macera">
+    <meta name="description" content="Space Station Pin up, uzayda geçen bir bilgisayar oyunu. Macera dolu görevler, gizemli uzay istasyonları ve stratejiyle dolu bir deneyim sizi bekliyor.">
+    <title>Space Station Pin up - Uzayda Bir Macera</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(to right, #1d2b64, #f8cdda);
+        padding: 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5em;
+        color: #fff;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        background-color: #222;
+      }
+
+      nav ul {
+        list-style: none;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      nav ul li a:hover {
+        color: #f8cdda;
+      }
+
+      .hero {
+        background-image: url('img/0.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero h2 {
+        font-size: 3em;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+      }
+
+      .content-section {
+        padding: 50px;
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .content-section h2 {
+        font-size: 2.5em;
+        color: #f8cdda;
+        margin-bottom: 20px;
+      }
+
+      .content-section p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+      }
+
+      .image-left,
+      .image-right {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      .image-left img,
+      .image-right img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .image-left {
+        flex-direction: row;
+      }
+
+      .image-right {
+        flex-direction: row-reverse;
+      }
+
+      .image-left .text,
+      .image-right .text {
+        width: 50%;
+        padding: 20px;
+      }
+
+      .image-left img,
+      .image-right img {
+        width: 50%;
+      }
+
+      footer {
+        background-color: #222;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer p {
+        margin-bottom: 0;
+      }
+
+      /* Адаптация под планшет */
+      @media (max-width: 768px) {
+        .content-section h2 {
+          font-size: 2em;
+        }
+
+        .content-section p {
+          font-size: 1em;
+        }
+
+        .image-left,
+        .image-right {
+          flex-direction: column;
+        }
+
+        .image-left img,
+        .image-right img,
+        .image-left .text,
+        .image-right .text {
+          width: 100%;
+        }
+      }
+
+      /* Адаптация под мобильные устройства */
+      @media (max-width: 576px) {
+        .hero h2 {
+          font-size: 2em;
+        }
+
+        nav ul li {
+          margin: 0 10px;
+        }
+
+        nav ul li a {
+          font-size: 1em;
+        }
+      }
+
+      /* Основной контейнер для изображений и текста */
+      .story-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      /* Стили для каждой секции истории */
+      .story-row section {
+        flex: 1 1 calc(33.333% - 20px); /* Три блока в один ряд */
+        box-sizing: border-box;
+      }
+
+      /* Изображения внутри каждой секции */
+      .story-row img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      /* Медиа-запросы для адаптивности */
+
+      /* Планшеты */
+      @media (max-width: 768px) {
+        .story-row section {
+          flex: 1 1 calc(50% - 20px); /* Два блока в ряд */
+        }
+      }
+
+      /* Мобильные устройства */
+      @media (max-width: 480px) {
+        .story-row section {
+          flex: 1 1 100%; /* Один блок в ряд */
+        }
+      }
+
+      /* Основной контейнер для изображений в галерее */
+      .gallery-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      /* Стили для изображений в галерее */
+      .gallery-row img {
+        width: calc(33.333% - 20px); /* Три изображения в строке на десктопе */
+        height: auto;
+        max-width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для изображений */
+        border-radius: 8px; /* Закругление углов */
+      }
+
+      /* Медиа-запросы для адаптивности */
+
+      /* Планшеты */
+      @media (max-width: 768px) {
+        .gallery-row img {
+          width: calc(50% - 20px); /* Два изображения в строке */
+        }
+      }
+
+      /* Мобильные устройства */
+      @media (max-width: 480px) {
+        .gallery-row img {
+          width: 100%; /* Одно изображение в строке */
+        }
+      }
+
+
+
+    </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Space Station Pin up - Uzayda Bir Macera</h1>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <ul>
+        <li><a href="#hikaye">Hikaye</a></li>
+        <li><a href="#ozellikler">Özellikler</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h2>Pin up ile Uzayın Derinliklerine Yolculuk!</h2>
+</section>
+
+<!-- Story Section -->
+<section id="hikaye" class="content-section">
+    <h2>Oyunun Hikayesi</h2>
+
+    <div class="story-row">
+        <!-- Story Part 1 -->
+        <section id="story-part1">
+            <p>
+                Uzayın derinliklerinde, bilinmeyen galaksilerin ötesinde bir istasyon var: "Space Station Pin up". Bu istasyon, sadece cesur ve kararlı olanların hayatta kalabildiği, tehlikelerle dolu bir evrenin kalbinde yer alıyor. İstasyonun amacı, insanlığın hayatta kalmasını sağlamak ve yeni keşifler yapmak. Ancak, bu evren göründüğünden çok daha tehlikeli.
+            </p>
+            <!-- Image for Story Part 1 -->
+            <img src="img/2.jpeg" alt="Space Station Pin up İstasyonu">
+        </section>
+
+        <!-- Story Part 2 -->
+        <section id="story-part2">
+            <p>
+                İstasyonun başında, en cesur pilotlardan biri olan sen varsın. Görevin, bu bilinmeyen evreni keşfetmek, kaynaklar toplamak ve Pin up destekli stratejik kararlar alarak hayatta kalmayı başarmak. Her adımında yeni tehditler, gizemli yaratıklar ve çözülememiş sırlarla karşılaşacaksın.
+            </p>
+            <!-- Image for Story Part 2 -->
+            <img src="img/3.jpeg" alt="Uzay Yaratıkları ve Görevler">
+        </section>
+
+        <!-- Story Part 3 -->
+        <section id="story-part3">
+            <p>
+                Space Station Pin up, Pin up markasının stratejik desteğiyle geliştirilen bu oyun, sizi uzayın derinliklerine sürükleyerek strateji ve hız gerektiren görevlerle dolu bir maceraya çağırıyor. Her yeni keşif, yeni bir gizemi ve yeni bir tehdidi beraberinde getiriyor. Uzayda hayatta kalmak, Pin up'ın sağlayacağı desteklerle mümkün olacak.
+            </p>
+            <!-- Image for Story Part 3 -->
+            <img src="img/4.jpeg" alt="Uzayın Derinliklerinde Keşif">
+        </section>
+
+        <!-- Story Part 4 -->
+        <section id="story-part4">
+            <p>
+                İstasyonun çevresinde beliren tehlikeler, sadece fiziksel tehditlerden ibaret değil. Bir yandan kaynak toplamak, diğer yandan istasyonu saldırılardan korumak zorundasınız. Pin up stratejileri sayesinde düşmanlarınızı yenebilir ve istasyonunuzu güçlendirebilirsiniz.
+            </p>
+            <!-- Image for Story Part 4 -->
+            <img src="img/5.jpg" alt="Düşmanlarla Mücadele ve Savunma">
+        </section>
+
+        <!-- Story Part 5 -->
+        <section id="story-part5">
+            <p>
+                Space Station Pin up evreninde her karar hayatta kalmanız için büyük önem taşıyor. Yanlış bir adım, tüm ekibinizin hayatına mal olabilir. Pin up'ın sunduğu ileri teknoloji ve stratejik avantajlarla, bu bilinmeyen evrende yeni bir düzen kurabilirsiniz. Ancak, unutmayın ki bu evrende her şey bir anda tersine dönebilir.
+            </p>
+            <!-- Image for Story Part 5 -->
+            <img src="img/6.jpg" alt="Hayatta Kalma ve Stratejik Kararlar">
+        </section>
+
+        <!-- Story Part 6 -->
+        <section id="story-part6">
+            <p>
+                Pin up destekli bu macera, sizi uzayın en karanlık köşelerine götürecek ve her yeni gezegen, her yeni galaksi, keşfedilmemiş sırlarla dolu olacak. Hayatta kalmanın anahtarı ise her zaman tetikte olmak ve Pin up'ın sunduğu imkanları en iyi şekilde kullanmak olacak.
+            </p>
+            <!-- Image for Story Part 6 -->
+            <img src="img/7.jpeg" alt="Galaksiler Arası Yolculuk">
+        </section>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="ozellikler" class="content-section">
+    <h2>Oyun Özellikleri</h2>
+
+    <div class="image-left">
+        <img src="img/8.jpeg" alt="Space Station Pin up Özellikler">
+        <div class="text">
+            <h3>Uzay Keşifleri</h3>
+            <p>
+                Space Station Pin up'ta, bilinmeyen galaksileri keşfederken yeni gezegenler ve kaynaklar bulacaksınız. Her yeni gezegen, sizi hem yeni fırsatlar hem de tehlikelerle karşılaştıracak.
+            </p>
+        </div>
+    </div>
+
+    <div class="image-right">
+        <img src="img/15.jpg" alt="Pin up Destekli Stratejiler">
+        <div class="text">
+            <h3>Pin up Destekli Stratejiler</h3>
+            <p>
+                Oyun boyunca, Pin up destekli stratejik kararlar alarak istasyonunuzu güçlendirecek ve uzayın derinliklerinde hayatta kalmayı başaracaksınız.
+            </p>
+        </div>
+    </div>
+
+    <div class="image-left">
+        <img src="img/10.jpeg" alt="Uzay Savaşları">
+        <div class="text">
+            <h3>Uzay Savaşları</h3>
+            <p>
+                Düşman uzaylılar ve diğer tehditlerle başa çıkmak için Pin up stratejilerini kullanarak büyük savaşlar vereceksiniz. Her zafer, sizi bir adım daha öne taşıyacak.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<!-- Gallery Section -->
+<section id="galeri" class="content-section">
+    <h2>Galeri</h2>
+    <div class="gallery-row">
+        <img src="img/11.jpeg" alt="Space Station Pin up Galeri 1">
+        <img src="img/14.jpg" alt="Space Station Pin up Galeri 2">
+        <img src="img/12.jpeg" alt="Space Station Pin up Galeri 3">
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="iletisim">
+    <p>&copy; 2024 Space Station Pin up - Tüm hakları saklıdır. | 3286+XJ Şişli, İstanbul, Türkiye | +905013611437 </p>
+</footer>
+
+</body>
+
+</html>

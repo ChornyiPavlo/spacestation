@@ -1,0 +1,7 @@
+User-Agent: *
+
+Disallow:
+
+
+Sitemap: http://pinup.spacestation.click/sitemap.xml
+Host: pinup.spacestation.click
