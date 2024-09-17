@@ -138,7 +138,6 @@
         margin-bottom: 0;
       }
 
-      /* Адаптация под планшет */
       @media (max-width: 768px) {
         .content-section h2 {
           font-size: 2em;
@@ -161,7 +160,6 @@
         }
       }
 
-      /* Адаптация под мобильные устройства */
       @media (max-width: 576px) {
         .hero h2 {
           font-size: 2em;
@@ -176,7 +174,6 @@
         }
       }
 
-      /* Основной контейнер для изображений и текста */
       .story-row {
         display: flex;
         flex-wrap: wrap;
@@ -184,36 +181,29 @@
         gap: 20px;
       }
 
-      /* Стили для каждой секции истории */
       .story-row section {
-        flex: 1 1 calc(33.333% - 20px); /* Три блока в один ряд */
+        flex: 1 1 calc(33.333% - 20px);
         box-sizing: border-box;
       }
 
-      /* Изображения внутри каждой секции */
       .story-row img {
         max-width: 100%;
         height: auto;
         margin-top: 10px;
       }
 
-      /* Медиа-запросы для адаптивности */
-
-      /* Планшеты */
       @media (max-width: 768px) {
         .story-row section {
-          flex: 1 1 calc(50% - 20px); /* Два блока в ряд */
+          flex: 1 1 calc(50% - 20px);
         }
       }
 
-      /* Мобильные устройства */
       @media (max-width: 480px) {
         .story-row section {
-          flex: 1 1 100%; /* Один блок в ряд */
+          flex: 1 1 100%;
         }
       }
 
-      /* Основной контейнер для изображений в галерее */
       .gallery-row {
         display: flex;
         flex-wrap: wrap;
@@ -221,28 +211,23 @@
         justify-content: center;
       }
 
-      /* Стили для изображений в галерее */
       .gallery-row img {
-        width: calc(33.333% - 20px); /* Три изображения в строке на десктопе */
+        width: calc(33.333% - 20px);
         height: auto;
         max-width: 100%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для изображений */
-        border-radius: 8px; /* Закругление углов */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
       }
 
-      /* Медиа-запросы для адаптивности */
-
-      /* Планшеты */
       @media (max-width: 768px) {
         .gallery-row img {
-          width: calc(50% - 20px); /* Два изображения в строке */
+          width: calc(50% - 20px);
         }
       }
 
-      /* Мобильные устройства */
       @media (max-width: 480px) {
         .gallery-row img {
-          width: 100%; /* Одно изображение в строке */
+          width: 100%;
         }
       }
 

@@ -215,7 +215,6 @@ footer p {
   }
 }
 
-/* Мобильные устройства */
 @media (max-width: 480px) {
   .gallery-row img {
     width: 100%;
@@ -846,7 +845,7 @@ nav ul li:hover a {
 }
 .logo-img {
   margin-bottom: 20px;
-  width: 200px; /* Измените размер по необходимости */
+  width: 200px;
   height: auto;
 }
 .button {
